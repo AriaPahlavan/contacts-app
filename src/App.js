@@ -1,15 +1,36 @@
-import React from 'react';
+import React, {Component} from 'react';
 import CardList from './CardList';
+import SreachBox from './SreachBox';
 import {contacts} from './contacts';
 
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      contacts: contacts,
+      searchfield: ''
+    }
+  }
 
-const App = () => {
-  return (
-    <div>
-      <CardList contacts={contacts}/>
-    </div>
-  );
-};
+  onSearch = (event) => {
+    this.setState({searchfield: event.target.value});
+  }
+
+  render() {
+    const filteredContacts = this.state.contacts.filter(contact => {
+      return contact.name
+                    .toLowerCase()
+                    .includes(this.state.searchfield.toLowerCase());
+    });
+    return (
+      <div className='tc'>
+        <h1 className="f1 bg-washed-red">Contacts List</h1>
+        <SreachBox onSearch={this.onSearch}/>
+        <CardList contacts={filteredContacts}/>
+      </div>
+    );
+  }
+}
 
 
 export default App;
