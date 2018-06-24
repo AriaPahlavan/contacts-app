@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import 'tachyons'
 import './index.css';
 import CardList from './CardList';
-import {robots} from './robots';
+import {contacts} from './contacts';
 
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<CardList robots={robots}/>, document.getElementById('root'));
+ReactDOM.render(<CardList contacts={contacts}/>, document.getElementById('root'));
 registerServiceWorker();

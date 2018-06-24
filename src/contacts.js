@@ -1,4 +1,4 @@
-export const robots = [
+export const contacts = [
     {
         id: 1,
         name: 'Leanne Graham',
