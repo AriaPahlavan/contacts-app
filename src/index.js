@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'tachyons'
 import './index.css';
-import CardList from './CardList';
-import {contacts} from './contacts';
+import App from './App';
 
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<CardList contacts={contacts}/>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
