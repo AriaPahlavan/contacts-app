@@ -4,7 +4,7 @@ import React from 'react';
 const SreachBox = ({onSearch}) => {
   return (
     <div className='pa2'>
-      <input className='pa3 ba b--green bg-lightest-blue'
+      <input className='pa3 ma2 ba b--green bg-lightest-blue'
             type='search'
             placeholder='search contacts'
             onChange={onSearch}/>

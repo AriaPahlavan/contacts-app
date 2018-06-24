@@ -24,7 +24,7 @@ class App extends Component {
     });
     return (
       <div className='tc'>
-        <h1 className="f1 bg-washed-red">Contacts List</h1>
+        <h1 className="avenir f1 light-green">Contacts List</h1>
         <SreachBox onSearch={this.onSearch}/>
         <CardList contacts={filteredContacts}/>
       </div>
