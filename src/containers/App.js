@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import CardList from './CardList';
-import SreachBox from './SreachBox';
-import Scroll from './Scroll';
+import CardList from '../components/CardList';
+import SreachBox from '../components/SreachBox';
+import Scroll from '../components/Scroll';
 
 class App extends Component {
   constructor() {
@@ -18,16 +18,16 @@ class App extends Component {
       .then(contacts => this.setState({ contacts: contacts }));
   }
 
-  onSearch = (event) => {
-    this.setState({searchfield: event.target.value});
-  }
+  onSearch = (event) => this.setState({searchfield: event.target.value});
 
   render() {
-    const filteredContacts = this.state.contacts.filter(contact => {
+    const { contacts, searchfield } = this.state;
+    const filteredContacts = contacts.filter(contact => {
       return contact.name
                     .toLowerCase()
-                    .includes(this.state.searchfield.toLowerCase());
+                    .includes(searchfield.toLowerCase());
     });
+
     return (
       <div className='tc'>
         <h1 className="avenir f1 light-green">Contacts List</h1>
