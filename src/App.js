@@ -1,15 +1,21 @@
 import React, {Component} from 'react';
 import CardList from './CardList';
 import SreachBox from './SreachBox';
-import {contacts} from './contacts';
+import Scroll from './Scroll';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      contacts: contacts,
+      contacts: [],
       searchfield: ''
     }
+  }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(contacts => this.setState({ contacts: contacts }));
   }
 
   onSearch = (event) => {
@@ -26,7 +32,9 @@ class App extends Component {
       <div className='tc'>
         <h1 className="avenir f1 light-green">Contacts List</h1>
         <SreachBox onSearch={this.onSearch}/>
-        <CardList contacts={filteredContacts}/>
+        <Scroll>
+          <CardList contacts={filteredContacts}/>
+        </Scroll>
       </div>
     );
   }
