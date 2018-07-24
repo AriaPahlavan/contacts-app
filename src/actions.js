@@ -11,7 +11,7 @@ export const setSearchField = (text) => ({
 });
 
 
-export const requestRobots = () => (dispatch) => {
+export const requestContacts = () => (dispatch) => {
   dispatch({ type: REQ_ROBOTS_PEND });
   fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
