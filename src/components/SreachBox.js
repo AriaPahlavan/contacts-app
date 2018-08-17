@@ -6,6 +6,7 @@ const SreachBox = ({onSearch}) => {
     <div className='pa2'>
       <input className='pa3 ma2 ba b--green bg-lightest-blue'
             type='search'
+            id='sb'
             aria-label='Search Kitties'
             placeholder='search kitties'
             onChange={onSearch}/>

@@ -4,10 +4,10 @@ import Card from './Card';
 const CardList = ({contacts}) => {
     return (
         <div>
-            {contacts.map((contact) => <Card key={contact.id}
-                                            id={contact.id}
-                                            name={contact.name}
-                                            email={contact.email}/>)}
+            {contacts.map(x => <Card key={x.id}
+                                     id={x.id}
+                                     name={x.name}
+                                     email={x.email}/>)}
         </div>
     )
 }

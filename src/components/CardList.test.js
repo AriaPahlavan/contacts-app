@@ -2,7 +2,7 @@ import {shallow} from 'enzyme';
 import React from 'react';
 import CardList from './CardList';
 
-it('ensurs CardList rendered like snapshot', () => {
+it('ensures CardList rendered like snapshot', () => {
   const mockRobots = [{
     id: 1,
     name: 'unknown',
