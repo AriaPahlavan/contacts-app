@@ -5,7 +5,7 @@ import {
   REQ_ROBOTS_FAIL
 } from './constants.js';
 
-const initialStateSearch = {
+export const initialStateSearch = {
   searchField: ''
 };
 
@@ -18,7 +18,7 @@ export const searchContacts = (state=initialStateSearch, action={}) => {
   }
 }
 
-const initialStateContacts = {
+export const initialStateContacts = {
   users: [],
   isPending: false,
   error: ''

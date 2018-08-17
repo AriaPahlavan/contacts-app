@@ -17,29 +17,32 @@ beforeEach(() => {
   wrapper = shallow(<MainApp {...mockProps}/>);
 });
 
-it('ensures MainApp renders', () => {
-  expect.assertions(1);
-  expect(wrapper).toMatchSnapshot();
-});
+describe('MainApp functionality test',() => {
+  it('ensures MainApp renders', () => {
+    expect.assertions(1);
+    expect(wrapper).toMatchSnapshot();
+  });
 
-it('ensures "no kitties" get filtered correctly', () => {
-  expect.assertions(1);
-  expect(wrapper.instance().filterKitties()).toEqual([]);
-});
+  it('ensures "no kitties" get filtered correctly', () => {
+    expect.assertions(1);
+    expect(wrapper.instance().filterKitties()).toEqual([]);
+  });
 
-it('ensures kitties get filtered correctly', () => {
-  expect.assertions(2);
+  it('ensures kitties get filtered correctly', () => {
+    expect.assertions(2);
 
-  const randomUser = {
-    id: 1,
-    name: 'Aria',
-    email: 'aria@gmail.com'
-  };
-  mockProps.users = [randomUser];
-  const wrapper2 = shallow(<MainApp {...mockProps}/>);
-  expect(wrapper2.instance().filterKitties()).toEqual([randomUser ]);
+    const randomUser = {
+      id: 1,
+      name: 'Aria',
+      email: 'aria@gmail.com'
+    };
+    mockProps.users = [randomUser];
+    const wrapper2 = shallow(<MainApp {...mockProps}/>);
+    expect(wrapper2.instance().filterKitties()).toEqual([randomUser ]);
 
-  mockProps.isPending = true;
-  const wrapper3 = shallow(<MainApp {...mockProps}/>);
-  expect(wrapper3.instance().filterKitties()).toEqual([randomUser ]);
+    mockProps.isPending = true;
+    const wrapper3 = shallow(<MainApp {...mockProps}/>);
+    expect(wrapper3.instance().filterKitties()).toEqual([randomUser ]);
+  });
+
 });
