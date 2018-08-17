@@ -28,14 +28,18 @@ it('ensures "no kitties" get filtered correctly', () => {
 });
 
 it('ensures kitties get filtered correctly', () => {
-  expect.assertions(1);
+  expect.assertions(2);
 
   const randomUser = {
     id: 1,
     name: 'Aria',
     email: 'aria@gmail.com'
   };
-  mockProps.users = [randomUser]
+  mockProps.users = [randomUser];
   const wrapper2 = shallow(<MainApp {...mockProps}/>);
   expect(wrapper2.instance().filterKitties()).toEqual([randomUser ]);
+
+  mockProps.isPending = true;
+  const wrapper3 = shallow(<MainApp {...mockProps}/>);
+  expect(wrapper3.instance().filterKitties()).toEqual([randomUser ]);
 });

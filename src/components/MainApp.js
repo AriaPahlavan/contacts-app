@@ -14,13 +14,13 @@ class MainApp extends Component {
     return kitties.filter(x => x.name
                                 .toLowerCase()
                                 .includes(query.toLowerCase()));
-    };
+  };
 
   render() {
     const { onSearch, isPending } = this.props;
 
     return isPending
-    ? <h1 className='tc mt7 avenir f1 light-green'>Loading...</h1>
+    ? <h1 className='tc mt7 avenir f1 light-green'>{'Loading...'}</h1>
     : (
         <div className='tc'>
           <h1 className="avenir f1 light-green">Your Kitties</h1>
