@@ -33,7 +33,7 @@ export const requestContacts = (state=initialStateContacts, action={}) => {
                                        isPending: false});
     case REQ_ROBOTS_FAIL:
       return Object.assign({}, state, {users: [],
-                                       isPending: true,
+                                       isPending: false,
                                        error: action.payload});
     default:
       return state;

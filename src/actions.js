@@ -16,5 +16,5 @@ export const requestContacts = () => (dispatch) => {
   fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(users => dispatch({ type: REQ_ROBOTS_SUCC, payload: users }))
-    .catch(error => dispatch({ type: REQ_ROBOTS_FAIL, payload: error }));
+    .catch(error => dispatch({ type: REQ_ROBOTS_FAIL, payload: 'FAIL' }));
 }
