@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://ariapahlavan.github.io/kitty-kards",
   "dependencies": {
+    "g": "^2.0.1",
     "gh-pages": "^1.2.0",
     "lighthouse-badges": "^0.2.16",
     "react": "^16.4.1",

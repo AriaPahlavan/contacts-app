@@ -80,7 +80,7 @@ describe('test requestContacts', () => {
     }))
     .toEqual({
       error: 'failure!',
-      isPending: true,
+      isPending: false,
       users: []
     });
   });
